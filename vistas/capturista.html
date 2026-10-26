@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery -->
+    <script 
+        src="https://code.jquery.com/jquery-3.3.1.js">
+    </script>
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Ionicons -->
+    <script 
+        type="module"
+        src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js">
+    </script>
+
+    <script 
+        nomodule
+        src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.js">
+    </script>
+
+    <title>Capturista</title>
+
+    <!-- Style -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+
+    <!-- JavaScript -->
+    <script src="../js/tablaVacantes.js"></script>
+    <script src="../js/accionesCapturista.js"></script>
+    
+</head>
+
+<body>
+    <div>
+        <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-2 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-5" id="btnNivel1" data-bs-toggle="tab" data-bs-target="#nivel1" type="button" role="tab" aria-selected="true">Validación</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="btnNivel2" data-bs-toggle="tab" data-bs-target="#nivel2" type="button" role="tab" aria-selected="false">Promoción
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="btnNivel3" data-bs-toggle="tab" data-bs-target="#nivel3" type="button" role="tab" aria-selected="false">Enlace</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="btnNivel4" data-bs-toggle="tab" data-bs-target="#nivel4" type="button" role="tab" aria-selected="false">Coordinador</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-5" id="btnNivel0" data-bs-toggle="tab" data-bs-target="#nivel0" type="button" role="tab" aria-selected="false">Rechazados</button>
+            </li>
+        </ul>
+    </div>
+    <!-- CONTENIDO DE LAS PESTAÑAS -->
+    <div class="tab-content mt-3">
+
+        <div class="tab-pane fade show active" id="nivel1" role="tabpanel" aria-labelledby="nivel1-tab">
+
+            <h3>Validación</h3>
+
+            <table class="table">
+                <thead>
+                    <th>Folio</th>
+                    <th>Fecha Captura</th>
+                    <th>Proceso</th>
+                    <th>Tipo plaza</th>
+                    <th>Tipo sostenimiento</th>
+                    <th>Plaza</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody id="tablaValidacion"></tbody>
+            </table>
+
+        </div>
+
+        <div class="tab-pane fade" id="nivel2" role="tabpanel" aria-labelledby="nivel2-tab">
+
+            <h3>Promoción</h3>
+
+            <table class="table">
+                <thead>
+                    <th>Folio</th>
+                    <th>Fecha Captura</th>
+                    <th>Proceso</th>
+                    <th>Tipo plaza</th>
+                    <th>Tipo sostenimiento</th>
+                    <th>Plaza</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody id="tablaPromocion"></tbody>
+            </table>
+
+        </div>
+
+
+        <div class="tab-pane fade" id="nivel3" role="tabpanel" aria-labelledby="nivel3-tab">
+
+            <h3>Enlace</h3>
+
+            <table class="table">
+                <thead>
+                    <th>Folio</th>
+                    <th>Fecha Captura</th>
+                    <th>Proceso</th>
+                    <th>Tipo plaza</th>
+                    <th>Tipo sostenimiento</th>
+                    <th>Plaza</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody id="tablaEnlace"></tbody>
+            </table>
+
+        </div>
+
+
+        <div class="tab-pane fade" id="nivel4" role="tabpanel" aria-labelledby="nivel4-tab">
+
+            <h3>Coordinador</h3>
+
+            <table class="table">
+                <thead>
+                    <th>Folio</th>
+                    <th>Fecha Captura</th>
+                    <th>Proceso</th>
+                    <th>Tipo plaza</th>
+                    <th>Tipo sostenimiento</th>
+                    <th>Plaza</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody id="tablaCoordinador"></tbody>
+            </table>
+
+        </div>
+
+        <div class="tab-pane fade" id="nivel0" role="tabpanel" aria-labelledby="nivel0-tab">
+
+            <h3>Rechazados</h3>
+
+            <table class="table">
+                <thead>
+                    <th>Folio</th>
+                    <th>Fecha Captura</th>
+                    <th>Fecha Validación</th>
+                    <th>Proceso</th>
+                    <th>Usuario que Rechazo</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody id="tablaRechazados"></tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div>
+        <button 
+            id="modalNuevoRegistro"
+            type="button"
+            class="btn btn-primary">
+            Añadir Nuevo Registro
+        </button>
+    </div>
+
+        
+    <!-- Modal Mostrar motivo rechazo -->
+    <div class="modal fade" id="modalMostrarRechazo" data-bs-backdrop="static">
+        <div class="modal-dialog position-absolute end-0 me-5" style="top: 15%;">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="miModalLabel">
+                        Motivo Rechazo
+                    </h1>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <div>
+                            Folio: <span id="span_folio" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="span_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha en que se Rechazo<span id="span_fecha_rechazo" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Usuario que Rechazo: <span id="span_usuario_rechazo" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Motivo del rechazo: <span id="span_nota_rechazo" class="cuadroRechazo"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Elegir tipo de captura (Tambien se usa para la correccion) -->
+    <div class="modal fade" id="modalElegirTipo" data-bs-backdrop="false">
+        <div id="dialogoElegirTipo" class="modal-dialog modal-dialog-centered" style="transition: all 0.3s ease;">
+            <div class="modal-content shadow-lg">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="miModalLabel">
+                        <span id="tituloModalDatos"></span>
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="paso1">
+                        Selecciona el tipo de captura:
+                        <select id="tipo_layout"></select>
+                    </div>
+
+                    <div id="paso2" style="display: none;">
+                        <label>Inserta los datos solicitados para validar la plaza</label>
+                        <hr>
+                        <form id="formularioValidarPlaza">
+                            <div id="cod_pago" class="lineaform_val">
+                                Codigo de Pago:
+                                <input type="text" id="cod_pagoInput" class="validarplaza" name="cod_pago">
+                            </div>
+                            <div id="unidad" class="lineaform_val">
+                                Unidad:
+                                <input type="text" id="unidadInput" class="validarplaza" name="unidad">
+                            </div>
+                            <div id="subunidad" class="lineaform_val">
+                                Sub-Unidad:
+                                <input type="text" id="subunidadInput" class="validarplaza" name="subunidad">
+                            </div>
+                            <div id="cat_puesto" class="lineaform_val">
+                                Categoria Puesto:
+                                <input type="text" id="cat_puestoInput" class="validarplaza" name="cat_puesto">
+                            </div>
+                            <div id="horas" class="lineaform_val">
+                                Horas:
+                                <input type="text" id="horasInput" class="validarplaza" name="horas">
+                            </div>
+                            <div id="cons_plaza" class="lineaform_val">
+                                Cons Plaza:
+                                <input type="text" id="cons_plazaInput" class="validarplaza" name="cons_plaza">
+                            </div>
+                            <div id="qna_ini" class="lineaform_val">
+                                Quincena Inicio:
+                                <input type="text" id="qna_iniInput" class="validarplaza" name="qna_ini">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="pasoEFUP" style="display: none;">
+                        <label>
+                            La plaza aparece en EFUP, ¿Desea continuar con el proceso de captura?
+                        </label>
+                    </div>
+
+                    <div id="pasoAP" style="display: none;">
+                        <label>
+                            No se ingreso una plaza valida.
+                        </label>
+                    </div>
+
+                    <div id="paso3" style="display: none;">
+                        <label>Los campos obligatorios se encuentran resaltados en azul</label>
+                        <hr>
+                        <form id="formularioCaptura">
+                            <div id="entidad" style="display: none;" class="lineaform_obl">
+                                Entidad:
+                                <input type="text" id="entidadInput" class="requerido" name="entidad">
+                            </div>
+                            <div id="municipio" style="display: none;" class="lineaform_opc">
+                                Municipio:
+                                <input type="text" id="municipioInput" name="municipio">
+                            </div>
+                            <div id="institucion" style="display: none;" class="lineaform_opc">
+                                Institución:
+                                <input type="text" id="institucionInput" name="institucion" autocomplete="off">
+                            </div>
+                            <div id="region" style="display: none;" class="lineaform_opc">
+                                Región:
+                                <input type="text" id="regionInput" name="region" autocomplete="off">
+                            </div>
+                            <div id="zona_economica" style="display: none;" class="lineaform_obl">
+                                Zona Económica:
+                                <select id="zona_economicaInput" class="requerido" name="zona_economica"></select>
+                            </div>
+                            <div id="proceso" style="display: none;" class="lineaform_obl">
+                                Proceso:
+                                <select id="procesoInput" class="requerido" name="proceso"></select>
+                            </div>
+                            <div id="tipo_apreciacion" style="display: none;" class="lineaform_obl">
+                                Tipo de Apreciación:
+                                <select id="tipo_apreciacionInput" class="requerido" name="tipo_apreciacion"></select>
+                            </div>
+                            <div id="tipo_vacante" style="display: none;" class="lineaform_obl">
+                                Tipo de Vacante:
+                                <select id="tipo_vacanteInput" class="requerido" name="tipo_vacante"></select>
+                            </div>
+                            <div id="tipo_plaza" style="display: none;" class="lineaform_obl">
+                                Tipo de Plaza:
+                                <select id="tipo_plazaInput" class="requerido" name="tipo_plaza"></select>
+                            </div>
+                            <div id="numero_horas" style="display: none;" class="lineaform_opc">
+                                Número de Horas:
+                                <input type="number" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="numero_horasInput" name="numero_horas" disabled>
+                            </div>
+                            <div id="tipo_sostenimiento" style="display: none;" class="lineaform_obl">
+                                Tipo de Sostenimiento:
+                                <select id="tipo_sostenimientoInput" class="requerido" name="tipo_sostenimiento"></select>
+                            </div>
+                            <div id="fecha_inicio_vacancia" style="display: none;" class="lineaform_obl">
+                                Fecha de Inicio de Vacancia:
+                                <input type="date" id="fecha_inicio_vacanciaInput" name="fecha_inicio_vacancia" class="requerido">
+                            </div>
+                            <div id="fecha_fin_vacancia" style="display: none;" class="lineaform_opc">
+                                Fecha de Fin de Vacancia:
+                                <input type="date" id="fecha_fin_vacanciaInput" name="fecha_fin_vacancia">
+                            </div>
+                            <div id="Clv_Categoria" style="display: none;" class="lineaform_obl">
+                                Clave de Categoría:
+                                <input type="text" id="clv_categoriaInput" name="clv_categoria" class="requerido">
+                            </div>
+                            <div id="paquete_de_plaza" style="display: none;" class="lineaform_opc">
+                                Paquete de Plaza:
+                                <input type="text" id="paquete_de_plazaInput" name="paquete_de_plaza">
+                            </div>
+                            <div id="clave_plaza" style="display: none;" class="lineaform_obl">
+                                Clave de Plaza:
+                                <input type="text" id="clave_plazaInput" name="clave_plaza" class="requerido">
+                            </div>
+                            <div id="cctPlazaDondeCobra" style="display: none;" class="lineaform_obl">
+                                CCT de Plaza donde Cobra:
+                                <input type="text" id="cctPlazaDondeCobraInput" name="cctPlazaDondeCobra" class="requerido">
+                            </div>
+                            <div id="cctPlazaDondeTrabaja" style="display: none;" class="lineaform_obl">
+                                CCT de Plaza donde Trabaja:
+                                <input type="text" id="cctPlazaDondeTrabajaInput" name="cctPlazaDondeTrabaja" class="requerido">
+                            </div>
+                            <div id="turno" style="display: none;" class="lineaform_obl">
+                                Turno:
+                                <select id="turnoInput" class="requerido" name="turno"></select>
+                            </div>
+                            <div id="tipo_de_licencia" style="display: none;" class="lineaform_opc">
+                                Tipo de Licencia:
+                                <select id="tipo_licenciaInput" name="tipo_de_licencia" disabled></select>
+                            </div>
+                            <div id="codigo_de_licencia" style="display: none;" class="lineaform_opc">
+                                Código de Licencia:
+                                <input type="text" id="codigo_licenciaInput" name="codigo_licencia">
+                            </div>
+                            <div id="inicio_de_licencia" style="display: none;" class="lineaform_opc">
+                                Inicio de Licencia (cargas previas):
+                                <input type="text" id="inicio_licenciaInput" name="inicio_de_licencia">
+                            </div>
+                            <div id="observaciones" style="display: none;" class="lineaform_opc">
+                                Observaciones:
+                                <input type="text" id="observacionesInput" name="observaciones">
+                            </div>
+                            <div id="inicio_ocupacion" style="display: none;" class="lineaform_opc">
+                                Inicio de Ocupación:
+                                <input type="date" id="inicio_ocupacionInput" name="inicio_ocupacion">
+                            </div>
+                            <div id="fin_ocupacion" style="display: none;" class="lineaform_opc">
+                                Fin de Ocupación:
+                                <input type="date" id="fin_ocupacionInput" name="fin_ocupacion">
+                            </div>
+                            <div id="ordenamiento" style="display: none;" class="lineaform_opc">
+                                Ordenamiento:
+                                <input type="text" id="ordenamientoInput" name="ordenamiento">
+                            </div>
+                            <div id="curp" style="display: none;" class="lineaform_opc">
+                                CURP:
+                                <input type="text" id="curpInput" name="curp">
+                            </div>
+                            <div id="nombre_docente" style="display: none;" class="lineaform_opc">
+                                Nombre del Docente:
+                                <input type="text" id="nombre_docenteInput" name="nombre_docente">
+                            </div>
+                            <div id="codigo" style="display: none;" class="lineaform_opc">
+                                Código:
+                                <input type="text" id="codigoInput" name="codigo">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btnAtras" class="btn btn-secondary" style="display: none;">Atras</button>
+                    <button type="button" id="btnSiguiente" class="btn btn-primary">Siguiente</button>
+                    <button type="submit" form="formularioValidarPlaza" id="btnValidar" class="btn btn-primary" style="display: none;" disabled>Siguiente</button>
+                    <button type="submit" form="formularioCaptura" id="btnCapturar" class="btn btn-primary" style="display: none;" disabled><span id="nBotonForm"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalVerCaptura" data-bs-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="miModalLabel">
+                        Ver Captura
+                    </h1>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <div>
+                            Usuario que captura: <span id="dato_id_usuario" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Folio: <span id="dato_folio" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Entidad: <span id="dato_entidad" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Municipio: <span id="dato_municipio" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Institucion: <span id="dato_institucion" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Region: <span id="dato_region" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Zona Economica: <span id="dato_zona_economica" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Proceso: <span id="dato_proceso" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Tipo Apreciación: <span id="dato_tipo_apreciacion" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Tipo Vacante: <span id="dato_tipo_vacante" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Tipo Plaza: <span id="dato_tipo_plaza" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Numero Horas: <span id="dato_numero_horas" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Tipo Sostenimiento: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                        <div>
+                            Fecha de Captura: <span id="dato_fecha_captura" class="cuadroRechazo"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="al_s" class="alert alert-success alerta-flotante" role="alert" style="display: none;">
+        <label>
+            <span id="msg_success"></span>
+        </label>
+    </div>
+    <div id="al_d" class="alert alert-danger alerta-flotante" role="alert" style="display: none;">
+        <label>
+            <span id="msg_danger"></span>
+        </label>
+    </div>
+    <div id="al_w" class="alert alert-warning alerta-flotante" role="alert" style="display: none;">
+        <label>
+            <span id="msg_warning"></span>
+        </label>
+    </div>
+
+</body>
+</html>

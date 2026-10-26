@@ -1,0 +1,17 @@
+<?php
+    // session_start();
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+    header("Access-Control-Allow-Methods:GET, POST, OPTIONS, PUT, DELETE");
+    header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+
+    require_once("../base/tipoLayout.php");
+
+    $id = $_GET["id_tipo_layout"] ?? null;
+
+    $tipoLayout = new TipoLayout();
+    $lista_datos = $tipoLayout->verDatosLayout($id);
+
+    echo $lista_datos;
+
+?>

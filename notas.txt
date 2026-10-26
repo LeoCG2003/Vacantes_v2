@@ -1,0 +1,61 @@
+Capturista: Ve solo sus capturas y si están autorizadas
+Validador: puede ver lo que valido un nivel antes
+
+---------------------------------------------
+
+Revisar Diagramas de Secuancia
+
+- AgregarVacante        (ya)
+- AutorizarVacante      ()
+- CorregirCaptura       (ya)
+- Imprimir              (ya)
+- RechazarVacante       (ya)
+- VisualizarCaptura     (ya)
+
+--------------------------------------------
+Si llega a servir:
+        console.log("quincena", qna);
+        console.log("tipo_layout", tipo_layout);
+        console.log("entidad:", entidad);
+        console.log("municipio:", municipio);
+        console.log("institucion:", institucion);
+        console.log("region:", region);
+        console.log("zona_economica:", zona_economica);
+        console.log("proceso:", proceso);
+        console.log("tipo_apreciacion:", tipo_apreciacion);
+        console.log("tipo_vacante:", tipo_vacante);
+        console.log("tipo_plaza:", tipo_plaza);
+        console.log("numero_horas:", numero_horas);
+        console.log("tipo_sostenimiento:", tipo_sostenimiento);
+        console.log("fecha_inicio_vacancia:", fecha_inicio_vacancia);
+        console.log("fecha_fin_vacancia:", fecha_fin_vacancia);
+        console.log("clv_categoria:", clv_categoria);
+        console.log("paquete_de_plaza", paquete_de_plaza);
+        console.log("clave_plaza", clave_plaza);
+        console.log("cctPlazaDondeCobra:", cctPlazaDondeCobra);
+        console.log("cctPlazaDondeTrabaja:", cctPlazaDondeTrabaja);
+        console.log("turno:", turno);
+        console.log("tipo_de_licencia:", tipo_de_licencia);
+        console.log("codigo_de_licencia:", codigo_de_licencia);
+        console.log("inicio_de_licencia:", inicio_de_licencia);
+        console.log("observaciones:", observaciones);
+        console.log("inicio_ocupacion:", inicio_ocupacion);
+        console.log("fin_ocupacion:", fin_ocupacion);
+        console.log("ordenamiento:", ordenamiento);
+        console.log("curp:", curp);
+        console.log("nombre_docente:", nombre_docente);
+        console.log("codigo:", codigo);
+
+
+EN AP el estado tiene que estar vacante para continuar.
+si plaza no devuelve nada es que no existe. 
+
+EN EFUP Si aparece decidir si se quiere continuar o no, y si es correcto en caso de que no se rebotaria
+
+guardar plaza rmada en plaza
+
+Datos usar ejemplo en AP EFUP:
+
+94 - 15 - E0363 - 7.0 - 291147 - 202614
+
+EL password esta codificado en MD5, codificarlo y mandarlo

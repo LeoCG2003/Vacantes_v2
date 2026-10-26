@@ -1,0 +1,75 @@
+.modal {
+    pointer-events: none !important;
+}
+
+/* Devolver la interacción únicamente a las cajas blancas de los modales */
+.modal-dialog {
+    pointer-events: auto !important;
+}
+
+.lineaform_obl {
+    color: blue;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    width: 300px;
+}
+
+.lineaform_opc {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.lineaform_val {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.select2-container {
+    max-width: 100%;
+}
+
+.select2-container--open .select2-dropdown {
+    width: 300px !important;
+    max-width: 90vw;
+}
+
+.select2-results__option {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+.select2-results__options {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+}
+
+.alerta-flotante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cuadroRechazo {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: rgb(248, 248, 250);
+    width: 100%;
+    padding: 2px;
+    max-height: 200px !important;
+    overflow-y: auto;
+
+}
